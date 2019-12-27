@@ -1,19 +1,19 @@
 #include"all.h"
 #pragma warning( disable : 6011) 
-                              //Êı¾İ±íÃû
+                              //æ•°æ®è¡¨å
 int main()
 {
 	//connectionparams
     char *host = "localhost";
-    char *user = "root";//mysqlµÄÓÃ»§Ãû
-    char *pass = "123456";//ÄãµÄmysql·şÎñÆ÷ÃÜÂë
+    char *user = "root";//mysqlçš„ç”¨æˆ·å
+    char *pass = "123456";//ä½ çš„mysqlæœåŠ¡å™¨å¯†ç 
     char *db = "kyceti";
 	int i;
 	//char name[100] = "special";
 	//char lin[100] = "insert into zyzhenzhi values(0,'gidf')";
     unsigned int port = 3306; //server port
     MYSQL *sock;
-    sock=mysql_init(0);                                //0ºÃÏñÒ²ÊÇMYSQL*
+    sock=mysql_init(0);                                //0å¥½åƒä¹Ÿæ˜¯MYSQL*
     if(sock &&mysql_real_connect(sock,host,user,pass,db,0,NULL,0))
     {
         cout<<"connect mysqlsucceed!"<<'\n'<<endl;
@@ -28,11 +28,11 @@ int main()
 	//row = mysql_fetch_row(result);
 	//mum = &row[1];
 	//cout << mum[0] << mum[1];
-	/*while ((row = mysql_fetch_row(result)))  //Óöµ½×îºóÒ»ĞĞ£¬ÔòÖĞÖ¹Ñ­»·
+	/*while ((row = mysql_fetch_row(result)))  //é‡åˆ°æœ€åä¸€è¡Œï¼Œåˆ™ä¸­æ­¢å¾ªç¯
 	{
-		for (i = 0; i < num; i++)         //ÀûÓÃforÑ­»·£¬Êä³ö¸ÃĞĞµÄÃ¿Ò»ÁĞ
+		for (i = 0; i < num; i++)         //åˆ©ç”¨forå¾ªç¯ï¼Œè¾“å‡ºè¯¥è¡Œçš„æ¯ä¸€åˆ—
 		{
-			cout << row[i] << "\t";    //rowÊÇMYSQL_ROW±äÁ¿£¬¿ÉÒÔµ±×öÊı×éÊ¹ÓÃ£¬iÎªÁĞÊı
+			cout << row[i] << "\t";    //rowæ˜¯MYSQL_ROWå˜é‡ï¼Œå¯ä»¥å½“åšæ•°ç»„ä½¿ç”¨ï¼Œiä¸ºåˆ—æ•°
 		}
 		cout << endl;
 	}*/
@@ -42,7 +42,7 @@ int main()
 	if (!mysql_query(sock, "create table gijf like xuanxiang"))
 		cout << "!" << endl;
 	else cout << "flase" << endl;*/
-	i=getchar();                 //getchar()·µ»ØÖµÎªint£¬µ¼ÖÂµÄ¾¯¸æ
+	i=getchar();                 //getchar()è¿”å›å€¼ä¸ºintï¼Œå¯¼è‡´çš„è­¦å‘Š
 	free(head);
 	free(rear);
 	getchar();
@@ -68,8 +68,8 @@ int shitisc(MYSQL* sock) {
 	resultsx = mysql_store_result(sock);
 
 
-	cout << "ÕşÖÎ£º"<<"\t\t"<<"ÊıÑ§£º"<<'\n';
-	while (1)  //Óöµ½×îºóÒ»ĞĞ£¬ÔòÖĞÖ¹Ñ­»·
+	cout << "æ”¿æ²»ï¼š"<<"\t\t"<<"æ•°å­¦ï¼š"<<'\n';
+	while (1)  //é‡åˆ°æœ€åä¸€è¡Œï¼Œåˆ™ä¸­æ­¢å¾ªç¯
 	{
 		zz = mysql_fetch_row(resultzz);
 		sx = mysql_fetch_row(resultsx);
@@ -109,14 +109,14 @@ int fuzhu(char* ori, int site, char* alter,char*cop) {
 	cop[j] = '\0';
 	return 0;
 }
-int fuzhu2(char *zz,int sit,int number) {  //»ù´¡×Ö·û´®£¬ĞŞ¸ÄÎ»ÖÃ£¬ĞèÒª¼ÓÈëµÄÊı
+int fuzhu2(char *zz,int sit,int number) {  //åŸºç¡€å­—ç¬¦ä¸²ï¼Œä¿®æ”¹ä½ç½®ï¼Œéœ€è¦åŠ å…¥çš„æ•°
 	char string[5];
 	int i, j, k;
 	char cc[100];
 	itoa(number, string, 10);
 	j = sit;
-	for (; zz[j] <= '9' && zz[j] >= '0'; j++);              //¶ÔÊı×Ö×Ö·û½øĞĞÉ¾³ı
-	strcpy(cc, zz + j);                 //¶ÔzzµÄsitºóÃæ½øĞĞ¸´ÖÆ
+	for (; zz[j] <= '9' && zz[j] >= '0'; j++);              //å¯¹æ•°å­—å­—ç¬¦è¿›è¡Œåˆ é™¤
+	strcpy(cc, zz + j);                 //å¯¹zzçš„sitåé¢è¿›è¡Œå¤åˆ¶
 	for (i = 0; zz[i] != '\0'; i++) {
 		if ((i == sit)) {
 			for (k = 0; string[k] != '\0'; k++)
@@ -134,7 +134,7 @@ int inita(MYSQL* sock, int times, char* name) {
 	int sit;
 	char zz[100] = "insert into work!(id,test1) values(2,0)";
 	char mum[100];
-	cout << "ÁĞ±íÊı£º" << times;
+	cout << "åˆ—è¡¨æ•°ï¼š" << times;
 	for (i = 0; zz[i] != '!'; i++);
 	fuzhu(zz, i, name, mum);
 	for (i = 0; mum[i] != '2'; i++);
@@ -151,13 +151,13 @@ int inita(MYSQL* sock, int times, char* name) {
 int shuchu(MYSQL* sock,int sum, int x,char* name) {                //sum=11,x=3
 	int i, j, k,llll;
 	int first, second, third;
-	int seconds, thirds;                                          //ÎŞÄÎÖ®¾Ù£¬ÔİÊ±Ïë²»³ö¸üºÃµÄËã·¨
+	int seconds, thirds;                                          //æ— å¥ˆä¹‹ä¸¾ï¼Œæš‚æ—¶æƒ³ä¸å‡ºæ›´å¥½çš„ç®—æ³•
 	int step = 0;
 	mm p = (mm)malloc(sizeof(ss));
 	mm q = (mm)malloc(sizeof(ss));
-	char zz[100] = "update work! set test1 =2 where id = 3";//1Îªfirst£¬2Îªsecond,3Îªthird
+	char zz[100] = "update work! set test1 =2 where id = 3";//1ä¸ºfirstï¼Œ2ä¸ºsecond,3ä¸ºthird
 	//char pp[100] = "alter table work! auto_increment=1;";
-	//Ö÷¼üÔ¼ÊøÕæµÄÊÇÓÖ¶ñĞÄÓÖºÃ£¬ÕæÄáÂêÄÑÊÜ,ÓĞÊ±ºòÕæÏë×Ô´´Êı¾İ¿â£¬mysqlÓÃµÄÌ«²»ÊæĞÄÁË
+	//ä¸»é”®çº¦æŸçœŸçš„æ˜¯åˆæ¶å¿ƒåˆå¥½ï¼ŒçœŸå°¼ç›éš¾å—,æœ‰æ—¶å€™çœŸæƒ³è‡ªåˆ›æ•°æ®åº“ï¼Œmysqlç”¨çš„å¤ªä¸èˆ’å¿ƒäº†
 	char mum[100];
 	j = 0;
 	first = second = third = 0;
@@ -175,13 +175,13 @@ int shuchu(MYSQL* sock,int sum, int x,char* name) {                //sum=11,x=3
 	if (!p || !q) return 5;
 	p = head->next;
 	//cout << sum << ' ' << x << '\n';
-	int times = sum / x;                       //ÕâÀïÓ¦¸ÃÓĞÏòÉÏÈ¡ÕûµÄËã·¨ 
+	int times = sum / x;                       //è¿™é‡Œåº”è¯¥æœ‰å‘ä¸Šå–æ•´çš„ç®—æ³• 
 	if (sum % x != 0)  times += 1;
 	//cout << "times:" << times << '\n';
 	inita(sock, x, name);
 	for (i = 0; i < times; i++) {
 
-		cout << "ÄãµÄµÚ" << i + 1 << "Ì×Ìâ";
+		cout << "ä½ çš„ç¬¬" << i + 1 << "å¥—é¢˜";
 		fuzhu2(mum, first, i + 1);
 		if (i+1 < 10)seconds = 0;
 		if (i + 1 >= 10) seconds = 1;
@@ -226,16 +226,16 @@ int listdevise(int sum) {
 	mm p = (mm)malloc(sizeof(ss));
 	if (!p) return 5;
 	p->num = 1;
-	head->next = p;                                 //PºÃÏñÎ´¸³ÖµµÄÔ­Òò 
+	head->next = p;                                 //På¥½åƒæœªèµ‹å€¼çš„åŸå›  
 	for (i = 1; i < sum; i++) {
-		mm q = (mm)malloc(sizeof(ss));            //ÕâÀïºÃÏñÊÇÃ»ÎÊÌâ£¬²»Çå³ş
+		mm q = (mm)malloc(sizeof(ss));            //è¿™é‡Œå¥½åƒæ˜¯æ²¡é—®é¢˜ï¼Œä¸æ¸…æ¥š
 		if (!q) return 5;
 		//cout<<p<<' '<<q<<'\n'; 
 		q->num = i + 1;
 		p->next = q;
 		p = q;
 		cout << p->num<<'\n';
-		//free(q);                                     //¾ÍÊÇÒòÎª¶àÁËfree,µ¼ÖÂÈ«ÅÌ½Ô´í 
+		//free(q);                                     //å°±æ˜¯å› ä¸ºå¤šäº†free,å¯¼è‡´å…¨ç›˜çš†é”™ 
 	}
 	rear->next = p;
 	p->next = head->next;
@@ -243,7 +243,7 @@ int listdevise(int sum) {
 		cout<<p->num<<'\n';
 		p=p->next;
 	} */
-	//free(p);                                        //²»ÄÜÂÒÉ¾£¬É¾ÁËÖ®ºópµÄÊı¾İ»áÃ»ÁË
+	//free(p);                                        //ä¸èƒ½ä¹±åˆ ï¼Œåˆ äº†ä¹‹åpçš„æ•°æ®ä¼šæ²¡äº†
 	return 0;
 }
 int fun(MYSQL* sock,char *name) {
@@ -260,14 +260,14 @@ int fun(MYSQL* sock,char *name) {
 	int step;
 	int sum;
 	srand(time(NULL));
-	fuzhu(sent, 14, name, mum);                          //16Ö¸!µÄÎ»ÖÃ
+	fuzhu(sent, 14, name, mum);                          //16æŒ‡!çš„ä½ç½®
 	if (!mysql_query(sock, mum))
 		cout << "true" << endl;
 	else cout << "flase" << endl;
 	result= mysql_store_result(sock);
 	//num = mysql_num_fields(result);
 	i = 0;
-	while ((row = mysql_fetch_row(result)))  //Óöµ½×îºóÒ»ĞĞ£¬ÔòÖĞÖ¹Ñ­»·
+	while ((row = mysql_fetch_row(result)))  //é‡åˆ°æœ€åä¸€è¡Œï¼Œåˆ™ä¸­æ­¢å¾ªç¯
 	{
 		//cout << row[1][0]<<"            ";
 		bc[i++] = row[1][0];
@@ -276,10 +276,10 @@ int fun(MYSQL* sock,char *name) {
 		cout << bc[i];*/
 	sum = i;
 	cout << '\n' << endl;
-	//	freopen("ÆôÓÃÊä³ö1.txt","w",stdout);
+	//	freopen("å¯ç”¨è¾“å‡º1.txt","w",stdout);
 	cout << "please input the step:";                         //cin>>bc;
 	cin >> step;                                              //	for(i=0;bc[i]!='?';i++);    
-	if(listdevise(sum)>0)cout<<"´íÎó";                   //ĞòÁĞºÅÅÅÁĞ  3.ÕâÀï°´ÕÕË¼Î¬¹ßĞÔÊÇÓ¦¸Ã£¬µ«ÊÇÕâÀï×îºÃÓĞ¸ö' ' 
+	if(listdevise(sum)>0)cout<<"é”™è¯¯";                   //åºåˆ—å·æ’åˆ—  3.è¿™é‡ŒæŒ‰ç…§æ€ç»´æƒ¯æ€§æ˜¯åº”è¯¥ï¼Œä½†æ˜¯è¿™é‡Œæœ€å¥½æœ‰ä¸ª' ' 
 	p = head->next;
 	for (i = 0; i < 30; i++) {
 		cout << p->num << ':' << bc[p->num - 1]<<"    ";
@@ -287,7 +287,7 @@ int fun(MYSQL* sock,char *name) {
 	}
 	cout << '\n';
 	home(sock, name);
-	if(shuchu(sock,sum, step,name)>0)cout<<"´íÎó";
+	if(shuchu(sock,sum, step,name)>0)cout<<"é”™è¯¯";
 	return 0;
 
 
@@ -299,7 +299,7 @@ int control3(MYSQL* sock, char* name) {
 	int suspend;
 	char p;
 	j = 0;
-	for (i = 0; zz[i] != '\0'; i++) {                                  //ÕâÀïËã·¨ÕæÓ¦¸ÃÓÅ»¯£¬ÓĞµã·±ÔÓ
+	for (i = 0; zz[i] != '\0'; i++) {                                  //è¿™é‡Œç®—æ³•çœŸåº”è¯¥ä¼˜åŒ–ï¼Œæœ‰ç‚¹ç¹æ‚
 		if (zz[i] != '!')mum[j++] = zz[i];
 		else
 			for (k = 0; name[k] != '\0'; k++)
@@ -335,7 +335,7 @@ int answ(MYSQL* sock,int sel, int pp[105][10],char* name) {
 	else cout << "flase" << endl;
 	result = mysql_store_result(sock);
 	i = 1;
-	while ((row = mysql_fetch_row(result)))  //Óöµ½×îºóÒ»ĞĞ£¬ÔòÖĞÖ¹Ñ­»·
+	while ((row = mysql_fetch_row(result)))  //é‡åˆ°æœ€åä¸€è¡Œï¼Œåˆ™ä¸­æ­¢å¾ªç¯
 	{
 		opt[i] = row[1][0];
 		i++;
@@ -362,7 +362,7 @@ int look(MYSQL* sock, char* name) {
 	else cout << "flase" << endl;
 	result = mysql_store_result(sock);
 	j = 1;
-	while ((row = mysql_fetch_row(result)))  //Óöµ½×îºóÒ»ĞĞ£¬ÔòÖĞÖ¹Ñ­»·
+	while ((row = mysql_fetch_row(result)))  //é‡åˆ°æœ€åä¸€è¡Œï¼Œåˆ™ä¸­æ­¢å¾ªç¯
 	{
 		for (i = 1; row[i] != NULL; i++) {
 			pp[j][i] = atoi(row[i]);
@@ -370,7 +370,7 @@ int look(MYSQL* sock, char* name) {
 		j++;
 	}
 	for (i = 1; pp[1][i] != -1; i++) {
-		cout << "Êä³öµÚ" << i << "Ì×ÌâÑ¡Ïî:";
+		cout << "è¾“å‡ºç¬¬" << i << "å¥—é¢˜é€‰é¡¹:";
 		for (j = 1; pp[j][i] != -1&&pp[j][i]!='\0'; j++)
 			cout << pp[j][i] <<'\t';
 		cout << '\n';
@@ -383,7 +383,7 @@ int look(MYSQL* sock, char* name) {
 	getchar();
 	return 0;
 }
-int home(MYSQL* sock, char* name) {                               //homeºÍcontrol2¿ÉÒÔºÏ²¢
+int home(MYSQL* sock, char* name) {                               //homeå’Œcontrol2å¯ä»¥åˆå¹¶
 	char num[100] = "create table work! like homework";
 	char mum[100];
 	int i, j, k;
@@ -395,13 +395,13 @@ int home(MYSQL* sock, char* name) {                               //homeºÍcontro
 				mum[j++] = name[k];
 	}
 	mum[j] = '\0';
-	if (!mysql_query(sock, mum))                      //´´½¨Ò»¸öworkspecialXX ±í
+	if (!mysql_query(sock, mum))                      //åˆ›å»ºä¸€ä¸ªworkspecialXX è¡¨
 		cout << "!" << endl;
 	else cout << "flase" << endl;
 	return 0;
 }
 
-int control2(MYSQL* sock, char* name) {                              //¸ºÔğÊäÈëÑ¡Ïî
+int control2(MYSQL* sock, char* name) {                              //è´Ÿè´£è¾“å…¥é€‰é¡¹
 	char num[100] = "create table ! like xuanxiang";
 //	char zz[100] = "insert into ! values(0,'*')";
 	char mum[100];
@@ -414,24 +414,24 @@ int control2(MYSQL* sock, char* name) {                              //¸ºÔğÊäÈëÑ
 				mum[j++] = name[k];
 	}
 	mum[j] = '\0';
-	if (!mysql_query(sock, mum))                      //´´½¨Ò»¸öspecialXX ±í
+	if (!mysql_query(sock, mum))                      //åˆ›å»ºä¸€ä¸ªspecialXX è¡¨
 		cout << "!" << endl;
 	else cout << "flase" << endl;
 	return 0;
 }
 int control1(MYSQL *sock,int step) {
 	int i;
-	char zz[100] = "insert into zyzhenzhi values(0,' ')";    //ÕâÀïº¯ÊıÖĞ±ØĞëÊ¹ÓÃcharÀàĞÍ£¬vectorÊ§°Ü¡£ÖĞÎÄÕ¼Á½¸ö×Ö½Ú
-	//lin[31 + i + 1 ]= num[i];    Õâ¾ä»°ÓÉÓÚ±àÒëÆ÷µÈÔ­ÒòÔì³É£¬¶ÁÈ¡·½Ê½²»Ò»Ñù£¬×îºÃ¸Ä³Élin[]
-	char sx[100] = "insert into zyshuxue  values(0,' ')";    //Îª¶Ô¶Ô¸ñÊıµÄ¿ØÖÆ£¬ÓÃ¿Õ¸ñÖ±½Ó¶ÔÓ¦
+	char zz[100] = "insert into zyzhenzhi values(0,' ')";    //è¿™é‡Œå‡½æ•°ä¸­å¿…é¡»ä½¿ç”¨charç±»å‹ï¼Œvectorå¤±è´¥ã€‚ä¸­æ–‡å ä¸¤ä¸ªå­—èŠ‚
+	//lin[31 + i + 1 ]= num[i];    è¿™å¥è¯ç”±äºç¼–è¯‘å™¨ç­‰åŸå› é€ æˆï¼Œè¯»å–æ–¹å¼ä¸ä¸€æ ·ï¼Œæœ€å¥½æ”¹æˆlin[]
+	char sx[100] = "insert into zyshuxue  values(0,' ')";    //ä¸ºå¯¹å¯¹æ ¼æ•°çš„æ§åˆ¶ï¼Œç”¨ç©ºæ ¼ç›´æ¥å¯¹åº”
 	char name[100]="special";
 	if (step == 1) shuru(sock, zz);
-	else if (step == 2) shuru(sock, sx);                        //´ıÊäÈëÄ£¿é£¬ÓĞÃ«²¡ÕâÀï¶¼¸øÎÒÏÔÊ¾´íÎó
-	/*while (mm != 'N') {                                          //ÕâÀï¾õµÃÃ»±ØÒª£¬ÔİÊ±ÒÔÒ»¶ÔÒ»¡£
+	else if (step == 2) shuru(sock, sx);                        //å¾…è¾“å…¥æ¨¡å—ï¼Œæœ‰æ¯›ç—…è¿™é‡Œéƒ½ç»™æˆ‘æ˜¾ç¤ºé”™è¯¯
+	/*while (mm != 'N') {                                          //è¿™é‡Œè§‰å¾—æ²¡å¿…è¦ï¼Œæš‚æ—¶ä»¥ä¸€å¯¹ä¸€ã€‚
 		cout << "if you want add the one again,please input Y,else input N:";
 		cin >> mm;
 		if (step == 1 && mm == 'Y') shuru(sock, zz);
-		else if (step == 2 && mm == 'Y') shuru(sock, sx);                        //´ıÊäÈëÄ£¿é£¬ÓĞÃ«²¡ÕâÀï¶¼¸øÎÒÏÔÊ¾´íÎó
+		else if (step == 2 && mm == 'Y') shuru(sock, sx);                        //å¾…è¾“å…¥æ¨¡å—ï¼Œæœ‰æ¯›ç—…è¿™é‡Œéƒ½ç»™æˆ‘æ˜¾ç¤ºé”™è¯¯
 	}*/       
 	for (i = 0; NUM[i] != '\0'; i++) {
 		name[i + 7] = NUM[i];
@@ -443,7 +443,7 @@ int control1(MYSQL *sock,int step) {
 int shuru(MYSQL* sock, char* lin) {
 	int i;
 	cout << "please input your Name of examination paper:";
-	cin >> NUM;            //½ö½öÒòÎªcinµ¼ÖÂ°æ±¾²»¼æÈİ£¿
+	cin >> NUM;            //ä»…ä»…å› ä¸ºcinå¯¼è‡´ç‰ˆæœ¬ä¸å…¼å®¹ï¼Ÿ
 		//scanf("%s",num);
 	for (i = 0; NUM[i] != '\0'; i++)
 	{
@@ -471,19 +471,19 @@ int control(MYSQL* sock) {
 	char name[100] = "special";
 	while (step != -1) {
 		system("cls");
-		cout << "1.add zyzhenzhi name;" << '\n' << endl;                    //ÕâÀï¿ÉÒÔ²ÉÓÃswith case½á¹¹
+		cout << "1.add zyzhenzhi name;" << '\n' << endl;                    //è¿™é‡Œå¯ä»¥é‡‡ç”¨swith caseç»“æ„
 		cout << "2.add zyshuxue name;" << '\n' << endl;
 		cout << "3.add yours'name xuanxiang;" << '\n' << endl;
 		cout << "4.generate a test question;" << '\n' << endl;
-		cout << "5.²é¿´Äã´´½¨µÄÊÔÌâ¿â" << '\n' << endl;
-		/*if (!mysql_query(sock, lin))                        ÓÃÓÚ±àÒëÒì³£
+		cout << "5.æŸ¥çœ‹ä½ åˆ›å»ºçš„è¯•é¢˜åº“" << '\n' << endl;
+		/*if (!mysql_query(sock, lin))                        ç”¨äºç¼–è¯‘å¼‚å¸¸
 			cout << "!" << endl;
 		else cout << "flase" << endl;*/
 		cout << "please input the number:";
 		cin >> step;
 		if (step <= 2)    control1(sock, step);
 
-		else if (step == 3) {                             //ÏëÔÚÕâÀïÖ±½ÓÉú³ÉËùÓĞÊÔÌâ£»
+		else if (step == 3) {                             //æƒ³åœ¨è¿™é‡Œç›´æ¥ç”Ÿæˆæ‰€æœ‰è¯•é¢˜ï¼›
 			shitisc(sock);
 			cout << "please input the yours'name:";
 			cin >> (name + 7);
