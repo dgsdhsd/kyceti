@@ -1,33 +1,32 @@
 create table zyshuxue(
-id int unsigned primary key auto_increment comment '±àºÅ',
-name varchar(255) comment 'Ãû×Ö'
+id int unsigned primary key auto_increment comment 'ç¼–å·',
+name varchar(255) comment 'åå­—'
 );
 
 create table zyzhenzhi(
-id int unsigned primary key auto_increment comment '±àºÅ',
-name varchar(255) comment 'Ãû×Ö'
+id int unsigned primary key auto_increment comment 'ç¼–å·',
+name varchar(255) comment 'åå­—'
 );
 
 create table xuanxiang(
-id int unsigned primary key auto_increment comment 'ÌâºÅ',
-ture char(1) comment '´ğ°¸'                //ÕâÀïÒ»¶¨Òª×¢ÒâÊÇture
+id int unsigned primary key auto_increment comment 'é¢˜å·',
+ture char(1) comment 'ç­”æ¡ˆ'                //è¿™é‡Œä¸€å®šè¦æ³¨æ„æ˜¯ture
 );
 
 create table yours(
-id int unsigned primary key auto_increment comment 'ÌâºÅ',
-opt char(1) comment 'ÄãµÄÑ¡Ïî'
+id int unsigned primary key auto_increment comment 'é¢˜å·',
+opt char(1) comment 'ä½ çš„é€‰é¡¹'
 );
-
 create table homework(
-id int unsigned primary key  comment '±àºÅ',
-test1 int comment 'ÊÔ¾í1',
-test2 int comment 'ÊÔ¾í2',
-test3 int comment 'ÊÔ¾í3',
-test4 int comment 'ÊÔ¾í4',
-test5 int comment 'ÊÔ¾í5',
-test6 int comment 'ÊÔ¾í6',
-test7 int comment 'ÊÔ¾í7',
-test8 int comment 'ÊÔ¾í8',
-test9 int comment 'ÊÔ¾í9',
-test10 int comment 'ÊÔ¾í10'
+id int unsigned primary key  comment 'ç¼–å·',
+test1 int comment 'è¯•å·1',
+test2 int comment 'è¯•å·2',
+test3 int comment 'è¯•å·3',
+test4 int comment 'è¯•å·4',
+test5 int comment 'è¯•å·5',
+test6 int comment 'è¯•å·6',
+test7 int comment 'è¯•å·7',
+test8 int comment 'è¯•å·8',
+test9 int comment 'è¯•å·9',
+test10 int comment 'è¯•å·10'
 );
