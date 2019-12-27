@@ -11,18 +11,18 @@
 using namespace std;
 #pragma comment (lib, "libmysql.lib")
 #pragma comment (lib, "mysqlclient.lib")
-typedef struct lianbiao {        //Á´±í½á¹¹³õ²½Íê³É 
+typedef struct lianbiao {        //é“¾è¡¨ç»“æ„åˆæ­¥å®Œæˆ 
 	int num;
-	lianbiao* next;              //1.ÕâÀï±ØĞëÊ¹ÓÃlianbiao  
-}ss, * mm;                           //2.ÕâÀï²ÉÓÃ*mm£¬¶ø²»ÊÇmm* 
+	lianbiao* next;              //1.è¿™é‡Œå¿…é¡»ä½¿ç”¨lianbiao  
+}ss, * mm;                           //2.è¿™é‡Œé‡‡ç”¨*mmï¼Œè€Œä¸æ˜¯mm* 
 mm head = (mm)malloc(sizeof(ss));
 mm rear = (mm)malloc(sizeof(ss));
 char bc[1000];
 char NUM[100];
 int shuru(MYSQL* sock, char* lin);
-int control(MYSQL* sock);                     //³õÊ¼¿ØÖÆÄ£¿é
-int control1(MYSQL* sock, int step);          //´´½¨ÊÔ¾íÃû
-int control2(MYSQL* sock, char* name);        //´´½¨Ñ¡Ïî
+int control(MYSQL* sock);                     //åˆå§‹æ§åˆ¶æ¨¡å—
+int control1(MYSQL* sock, int step);          //åˆ›å»ºè¯•å·å
+int control2(MYSQL* sock, char* name);        //åˆ›å»ºé€‰é¡¹
 int fun(MYSQL* sock, char* name);
 int dele(mm p, mm q);
 int shuchu(MYSQL* sock, int sum, int x, char* name);
