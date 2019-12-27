@@ -1,0 +1,33 @@
+create table zyshuxue(
+id int unsigned primary key auto_increment comment '±àºÅ',
+name varchar(255) comment 'Ãû×Ö'
+);
+
+create table zyzhenzhi(
+id int unsigned primary key auto_increment comment '±àºÅ',
+name varchar(255) comment 'Ãû×Ö'
+);
+
+create table xuanxiang(
+id int unsigned primary key auto_increment comment 'ÌâºÅ',
+ture char(1) comment '´ğ°¸'                //ÕâÀïÒ»¶¨Òª×¢ÒâÊÇture
+);
+
+create table yours(
+id int unsigned primary key auto_increment comment 'ÌâºÅ',
+opt char(1) comment 'ÄãµÄÑ¡Ïî'
+);
+
+create table homework(
+id int unsigned primary key  comment '±àºÅ',
+test1 int comment 'ÊÔ¾í1',
+test2 int comment 'ÊÔ¾í2',
+test3 int comment 'ÊÔ¾í3',
+test4 int comment 'ÊÔ¾í4',
+test5 int comment 'ÊÔ¾í5',
+test6 int comment 'ÊÔ¾í6',
+test7 int comment 'ÊÔ¾í7',
+test8 int comment 'ÊÔ¾í8',
+test9 int comment 'ÊÔ¾í9',
+test10 int comment 'ÊÔ¾í10'
+);

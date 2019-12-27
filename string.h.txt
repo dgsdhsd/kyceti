@@ -1,0 +1,126 @@
+1.memcpy：void * memcpy ( void * destination, const void * source, size_t num );
+
+简介：destination是被复制的数组，source是源文件；
+num指需要复制的字节数
+需要注意的是他的二进制运算，无关于一定是数组，对int，double亦可运算。
+num的取数需要注意；
+因为采用指针，可以在数组任意位置进行运算。
+
+
+
+2.memmove：void * memcpy ( void * destination, const void * source, size_t num );
+简介：
+      同memcpy，但是memmove可以在重叠的数组进行工作，相比较而言，memmove更值得使用。
+      agag456g5P4ds6gdsgs56
+      destination在第一个a上，source可以在P上，感觉还是挺不错的方法，他是运用中间缓存区的原理；
+
+
+3.strcpy：char * strcpy ( char * destination, const char * source );
+简介：destination 完全复制source，包括'\0'等等。
+      有返回值：返回destination。
+
+4.strncpy：char * strncpy ( char * destination, const char * source, size_t num );
+简介：同memcpy，但是遇到‘\0’等结束符号停止；
+
+
+5.strcat：char * strcat ( char * destination, const char * source );
+简介：将source添加到destination的末尾。
+有返回值：返回destination。
+
+6.strncat：char * strncat ( char * destination, const char * source, size_t num );
+简介：在strcat的基础加上锁定长度，遇到空字符自动结束；
+有返回值：返回destination。
+
+
+7.memcmp：int memcmp ( const void * ptr1, const void * ptr2, size_t num );
+简介：比较函数，若小于0，ptr1字符串整体偏小，若大于0，ptr1整体偏大。
+注意：即使遇到空字符，也不会停止比较。
+
+8.fflush(stdin)，如此一来就可以清空标准输入缓冲里多余的数据。
+
+
+9.fflush(stdout):对标准输出流的清理，但是它并不是把数据丢掉，而是及时地打印数据到屏幕上。
+标准输出是以行为单位进行的，也即碰到\n才打印数据到屏幕。这就可能造成延时,但是Windows
+
+平台上，似乎并看不出差别来。
+
+10.strcmp：int strcmp ( const char * str1, const char * str2 );
+简介：类似memcmp，采用二进制比较，遇到'\0'停止比较。
+
+
+11.strncmp：int strncmp ( const char * str1, const char * str2, size_t num );
+简介：比较num字节之内的字符串比较。
+
+12.strcoll：int strcoll ( const char * str1, const char * str2 );
+简介：基于 LC_COLLATE的比较，暂时用不到，方法与strcmp类似。
+
+13.strxfrm：size_t strxfrm ( char * destination, const char * source, size_t num );
+简介：基于c local原则的比较，暂不做考虐。
+
+14.memchr：const void * memchr ( const void * ptr, int value, size_t num );
+           void * memchr (       void * ptr, int value, size_t num );
+简介：查找ptr数组中与value一样的值，无论value是什么类型的值，中途都会更改成char运算。
+num约定数组的位数。
+有返回值，返回查找到的指针（值得注意，返回的是地址）
+
+
+15.strchr：const char * strchr ( const char * str, int character );
+           char * strchr (       char * str, int character );
+简介：寻找character在str的位置，返回一个指针。
+附：'\0'亦可被寻找
+
+16.strcspn：size_t strcspn ( const char * str1, const char * str2 );
+简介：Scans str1 for the first occurrence of any of the characters that are part of str2, 
+returning the number of characters of str1 read before this first occurrence.
+str1中查找任意一个str2的字符，若找到，返回那个字符所在位置的int值。
+这个函数可作为strlen，当第二个参数是'\0'。
+
+
+17.strpbrk：const char * strpbrk ( const char * str1, const char * str2 );
+            char * strpbrk (       char * str1, const char * str2 );
+简介：同strcspn，返回的是指针。
+
+
+18.strrchr:const char * strrchr ( const char * str, int character );
+           char * strrchr (       char * str, int character );
+简介：返回出现character的最后一个字符的位置。
+返回一个指针。
+
+19.strspn：size_t strspn ( const char * str1, const char * str2 );
+简介:The length of the initial portion of str1 containing only characters that appear in str2.
+Therefore, if all of the characters in str1 are in str2, the function returns the length of the entire str1 string,
+ and if the first character in str1 is not in str2, the function returns zero.
+以例子解释：char strtext[] = "129th";          s29th
+            char cset[] = "1234567890";        1234567890
+            i = strspn (strtext,cset); 
+            i=3                                i=0
+
+20.strstr:const char * strstr ( const char * str1, const char * str2 );
+          char * strstr (       char * str1, const char * str2 );
+简介：Returns a pointer to the first occurrence of str2 in str1, or a null pointer if str2 is not part of str1.
+返回第一次出现str2（所有字符）的位置的指针；
+存在bug，遇到'\0',会出现等待，导致程序崩溃，慎用，可以修改函数。
+
+21.memset，strlen：太熟了，不说了
+
+22.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
